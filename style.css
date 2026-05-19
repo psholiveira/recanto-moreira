@@ -55,7 +55,7 @@ img { display: block; max-width: 100%; }
 }
 .nav.scrolled .brand { color: var(--ink); }
 .brand-mark {
-  width: 46px; height: 46px;
+  width: 60px; height: 60px;
   border-radius: 50%;
   background: var(--cream);
   overflow: hidden;
@@ -69,10 +69,10 @@ img { display: block; max-width: 100%; }
 }
 .brand-mark img {
   width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: 50% 32%;
-  transform: scale(1.55);
-  transform-origin: 50% 30%;
+  object-fit: contain;
+  object-position: 50% 50%;
+  transform: scale(1);
+  transform-origin: 50% 50%;
   display: block;
 }
 .brand-name {
