@@ -168,14 +168,17 @@ function enviarWhatsApp(e) {
   const ocasiao = f.ocasiao.value.trim();
   const mensagem = f.mensagem.value.trim();
 
-  let texto = `Olá! Sou ${nome} e gostaria de fazer uma reserva no Recanto Moreira.\n\n`;
-  texto += `🪪 CPF: ${cpf}\n`;
-  texto += `📅 Check-in: ${checkin}\n`;
-  texto += `📅 Check-out: ${checkout}\n`;
-  texto += `👥 Pessoas: ${pessoas}\n`;
-  if (ocasiao) texto += `🎉 Ocasião: ${ocasiao}\n`;
-  if (mensagem) texto += `\n💬 ${mensagem}\n`;
-  texto += `\nPodem confirmar a disponibilidade e me passar os valores?`;
+  const plural = Number(pessoas) === 1 ? 'pessoa' : 'pessoas';
+
+  let texto = `*Solicitação de Reserva — Recanto Moreira*\n\n`;
+  texto += `*Nome:* ${nome}\n`;
+  texto += `*CPF:* ${cpf}\n`;
+  texto += `*Check-in:* ${checkin}\n`;
+  texto += `*Check-out:* ${checkout}\n`;
+  texto += `*Hóspedes:* ${pessoas} ${plural}\n`;
+  if (ocasiao) texto += `*Ocasião:* ${ocasiao}\n`;
+  if (mensagem) texto += `\n*Observação:*\n${mensagem}\n`;
+  texto += `\nPodem confirmar a disponibilidade e me informar os valores?`;
 
   const url = `https://wa.me/${WPP}?text=${encodeURIComponent(texto)}`;
 
