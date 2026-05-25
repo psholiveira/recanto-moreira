@@ -432,13 +432,14 @@ section { padding: 120px 0; position: relative; }
 .g-1 { grid-column: span 6; grid-row: span 3; }
 .g-2 { grid-column: span 3; grid-row: span 2; }
 .g-3 { grid-column: span 3; grid-row: span 2; }
-.g-4 { grid-column: span 4; grid-row: span 2; }
-.g-5 { grid-column: span 4; grid-row: span 2; }
-.g-6 { grid-column: span 4; grid-row: span 2; }
+.g-4 { grid-column: span 3; grid-row: span 2; }
+.g-5 { grid-column: span 3; grid-row: span 2; }
+.g-6 { grid-column: span 3; grid-row: span 2; }
+.g-7 { grid-column: span 3; grid-row: span 2; }
 @media (max-width: 880px) {
   .g-1 { grid-column: span 6; grid-row: span 2; }
   .g-2, .g-3 { grid-column: span 3; grid-row: span 2; }
-  .g-4, .g-5, .g-6 { grid-column: span 2; grid-row: span 2; }
+  .g-4, .g-5, .g-6, .g-7 { grid-column: span 3; grid-row: span 2; }
 }
 
 /* photo fill for hero / about / gallery */
