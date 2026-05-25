@@ -248,3 +248,9 @@ checkoutInput.addEventListener('change', () => {
   checkoutInput.min = saturdayStr;
   checkoutInput.value = sundayStr;
 })();
+
+document.querySelectorAll('.video-wrapper video').forEach(function(video) {
+  video.addEventListener('volumechange', function() {
+    if (!video.muted) video.muted = true;
+  });
+});

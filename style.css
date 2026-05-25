@@ -176,7 +176,7 @@ img { display: block; max-width: 100%; }
   position: absolute; inset: 0;
   background-image:
     linear-gradient(180deg, rgba(15,60,60,0.35) 0%, rgba(15,60,60,0.55) 55%, rgba(11,40,42,0.88) 100%),
-    url('fotos/02-piscina-entardecer.jpeg');
+    url('pictures/02-piscina-entardecer.jpeg');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -448,6 +448,74 @@ section { padding: 120px 0; position: relative; }
   display: block;
 }
 
+/* ============ VÍDEOS ============ */
+.videos { background: var(--shell); }
+.videos-head { text-align: center; margin-bottom: 64px; }
+.videos-head .section-title { margin-left: auto; margin-right: auto; }
+.videos-head .section-lead { margin: 0 auto; }
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  justify-content: center;
+  gap: 28px;
+}
+@media (max-width: 720px) { .videos-grid { grid-template-columns: minmax(0, 360px); } }
+.video-card {
+  background: var(--cream);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(27,42,46,0.06);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(15,60,60,0.10);
+}
+.video-wrapper {
+  position: relative;
+  aspect-ratio: 9/16;
+  background: var(--ink);
+  overflow: hidden;
+}
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+}
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--turquoise-deep) 0%, var(--palm) 100%);
+}
+.video-placeholder-icon {
+  width: 72px; height: 72px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  border: 2px solid rgba(255,255,255,0.35);
+  color: var(--shell);
+  transition: transform .3s ease, background .3s ease;
+}
+.video-card:hover .video-placeholder-icon {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.28);
+}
+.video-caption {
+  padding: 18px 22px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
 /* ============ QUARTOS ============ */
 .quartos { background: var(--cream); }
 .quartos-head {
@@ -558,6 +626,76 @@ section { padding: 120px 0; position: relative; }
   margin-bottom: 22px;
 }
 .quarto-cta .btn-whats { padding: 12px 22px; font-size: 14px; }
+
+/* ============ DEPOIMENTOS ============ */
+.depoimentos { background: var(--sand); }
+.depoimentos-head { text-align: center; margin-bottom: 64px; }
+.depoimentos-head .section-title { margin-left: auto; margin-right: auto; }
+.depoimentos-head .section-lead { margin: 0 auto; }
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 880px) { .depoimentos-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .depoimentos-grid { grid-template-columns: 1fr; } }
+.depoimento-card {
+  background: var(--shell);
+  padding: 36px 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(27,42,46,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.depoimento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(15,60,60,0.08);
+}
+.depoimento-stars {
+  color: #F59E0B;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+.depoimento-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink);
+  flex: 1;
+}
+.depoimento-quote::before { content: '\201C'; }
+.depoimento-quote::after { content: '\201D'; }
+.depoimento-author {
+  display: flex; gap: 14px; align-items: center;
+  border-top: 1px solid rgba(27,42,46,0.08);
+  padding-top: 18px;
+}
+.depoimento-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--turquoise-soft);
+  display: grid; place-items: center;
+  color: var(--turquoise-deep);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.depoimento-info h4 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  color: var(--ink);
+}
+.depoimento-info small {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+}
 
 /* ============ VALORES ============ */
 .valores {

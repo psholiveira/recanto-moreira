@@ -32,7 +32,7 @@ Site institucional do **Recanto Moreira**, um espaço de hospedagem e lazer, com
 
 ```
 recanto-moreira/
-├── fotos/              # Imagens da galeria
+├── pictures/              # Imagens da galeria
 ├── index.html          # Página principal
 ├── style.css           # Estilos
 ├── script.js           # Lógica e interações
@@ -84,7 +84,7 @@ O formulário **não envia e-mails** — ele monta uma mensagem formatada e abre
 Para adaptar o projeto para outro estabelecimento, ajuste:
 
 - **Número do WhatsApp:** constante `WPP` no `script.js` (linha 2)
-- **Imagens:** substitua os arquivos na pasta `fotos/`
+- **Imagens:** substitua os arquivos na pasta `pictures/`
 - **Textos e cores:** edite `index.html` e as variáveis CSS no `style.css`
 
 ---
