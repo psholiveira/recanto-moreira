@@ -32,10 +32,42 @@ img { display: block; max-width: 100%; }
 .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 @media (max-width: 720px) { .container { padding: 0 22px; } }
 
+/* ============ TICKER BANNER ============ */
+.ticker-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 60;
+  background: #D4A020;
+  color: var(--ink);
+  height: 36px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker-scroll 24s linear infinite;
+  will-change: transform;
+}
+.ticker-content {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding-right: 80px;
+}
+.ticker-content strong {
+  font-weight: 700;
+}
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ============ NAV ============ */
 .nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 36px; left: 0; right: 0;
   z-index: 50;
   padding: 22px 0;
   transition: background .35s ease, padding .35s ease, box-shadow .35s ease;
@@ -166,11 +198,11 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  padding-top: 140px;
+  padding-top: 176px;
   padding-bottom: 80px;
 }
 @media (max-width: 720px) {
-  .hero { padding-top: 120px; padding-bottom: 60px; }
+  .hero { padding-top: 156px; padding-bottom: 60px; }
 }
 .hero-bg {
   position: absolute; inset: 0;
