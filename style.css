@@ -32,36 +32,58 @@ img { display: block; max-width: 100%; }
 .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 @media (max-width: 720px) { .container { padding: 0 22px; } }
 
-/* ============ TICKER BANNER ============ */
-.ticker-banner {
+/* ============ VARAL JUNINO ============ */
+.bunting-banner {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 60;
-  background: #D4A020;
-  color: var(--ink);
+  z-index: 61;
   height: 36px;
+  background: var(--cream);
   overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,.1);
+}
+.bunting-row {
+  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  height: 100%;
+  padding: 7px 14px 0;
+  gap: 6px;
 }
-.ticker-track {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: ticker-scroll 24s linear infinite;
-  will-change: transform;
+.bunting-row::before {
+  content: '';
+  position: absolute;
+  top: 6px; left: 0; right: 0;
+  height: 1px;
+  background: #8a6a3e;
+  opacity: .55;
 }
-.ticker-content {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  padding-right: 80px;
+.flag {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 20px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  animation: flag-sway 3.2s ease-in-out infinite;
 }
-.ticker-content strong {
-  font-weight: 700;
+.flag:nth-child(6n+1) { background: #E2574C; animation-delay: 0s; }
+.flag:nth-child(6n+2) { background: #F2C94E; animation-delay: .18s; }
+.flag:nth-child(6n+3) { background: #3AA655; animation-delay: .36s; }
+.flag:nth-child(6n+4) { background: #3E8FCB; animation-delay: .54s; }
+.flag:nth-child(6n+5) { background: #E36FA7; animation-delay: .72s; }
+.flag:nth-child(6n+6) { background: #F7F3E9; animation-delay: .9s; }
+@keyframes flag-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
 }
-@keyframes ticker-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@media (prefers-reduced-motion: reduce) {
+  .flag { animation: none; }
+}
+@media (max-width: 720px) {
+  .bunting-banner { height: 30px; }
+  .bunting-row { padding: 5px 8px 0; gap: 4px; }
+  .flag { width: 16px; height: 16px; }
+  .nav { top: 30px; }
 }
 
 /* ============ NAV ============ */
@@ -468,10 +490,14 @@ section { padding: 120px 0; position: relative; }
 .g-5 { grid-column: span 3; grid-row: span 2; }
 .g-6 { grid-column: span 3; grid-row: span 2; }
 .g-7 { grid-column: span 3; grid-row: span 2; }
+.g-8 { grid-column: span 3; grid-row: span 2; }
+.g-9 { grid-column: span 3; grid-row: span 2; }
+.g-10 { grid-column: span 3; grid-row: span 2; }
+.g-11 { grid-column: span 3; grid-row: span 2; }
 @media (max-width: 880px) {
   .g-1 { grid-column: span 6; grid-row: span 2; }
   .g-2, .g-3 { grid-column: span 3; grid-row: span 2; }
-  .g-4, .g-5, .g-6, .g-7 { grid-column: span 3; grid-row: span 2; }
+  .g-4, .g-5, .g-6, .g-7, .g-8, .g-9, .g-10, .g-11 { grid-column: span 3; grid-row: span 2; }
 }
 
 /* photo fill for hero / about / gallery */
