@@ -2,7 +2,7 @@
 
 Site institucional do **Recanto Moreira**, um espaço de hospedagem e lazer, com sistema de reservas integrado ao WhatsApp.
 
-🔗 **Site no ar:** [psholiveira.github.io/recanto-moreira](https://psholiveira.github.io/recanto-moreira/) *(disponível após ativar o GitHub Pages)*
+🔗 **Site no ar:** https://recanto-moreira.vercel.app/
 
 ---
 
